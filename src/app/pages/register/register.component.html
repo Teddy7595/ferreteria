@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Bienvenido al sistema de creación de cuentas</h1>
+                        </div>
+                        <form ngNativeValidate [formGroup]="forma" (ngSubmit)="onSubmit()" class="user" >
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input formControlName="name" required name="name" type="text" class="form-control form-control-user" id="Nombre"
+                                        placeholder="Ingrese su nombre">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="surname" required name="surname" type="text" class="form-control form-control-user" id="Apellido"
+                                        placeholder="Ingrese su apellido">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input formControlName="cID" required  name="cID" type="text" class="form-control form-control-user" id="cedula"
+                                        placeholder="Ingrese su cedula">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="email" required  name="email" type="text" class="form-control form-control-user" id="correo"
+                                        placeholder="Ingrese su correo electronico">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input formControlName="adress1" required  name="adress1" type="text" class="form-control form-control-user" id="address1"
+                                    placeholder="Ingrese su dirección principal">
+                            </div>
+                            <div class="form-group">
+                                <input formControlName="adress2" name="adress2" type="text" class="form-control form-control-user" id="address2"
+                                    placeholder="Ingrese su dirección secundaria">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input formControlName="question1" required  name="question1" type="text" class="form-control form-control-user" id="quest1"
+                                        placeholder="Ingrese su primera pregunta secreta">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="answer1" required  name="answer1" type="text" class="form-control form-control-user" id="answer1"
+                                        placeholder="Respuesta #1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input formControlName="question2" name="question2" type="text" class="form-control form-control-user" id="quest2"
+                                        placeholder="Ingrese su segunda pregunta secreta">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="answer2" name="answer2" type="text" class="form-control form-control-user" id="answer2"
+                                        placeholder="Respuesta #2">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input formControlName="phone1" required  name="phone1" type="text" class="form-control form-control-user" 
+                                        id="phFirst" placeholder="Numero de telefono principal">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="phone2" required  name="phone2" type="text" class="form-control form-control-user"
+                                        id="phSecond" placeholder="Numero de telefono secundario">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input formControlName="password1" required  name="password1" type="password" class="form-control form-control-user" id="contraseña"
+                                        placeholder="Ingrese su contraseña">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input formControlName="password2" required  name="password2" type="password" class="form-control form-control-user"
+                                        id="confirmarcontraseña" placeholder="Repita la contraseña">
+                                </div>
+                            </div>
+                            <div class="form-group text-center" > 
+                                <p class="text-danger" *ngIf="forma.errors?.equalsInputs && forma.pristine">
+                                    Las contraseñas deben ser iguales
+                                </p>
+                            </div>
+                            <button type="submit" class="btn color-dark color-font-light btn-user btn-block">
+                                Registrar Cuenta
+                            </button>
+                            <a href="#/" class="btn btn-secondary btn-user btn-block">
+                                Volver
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

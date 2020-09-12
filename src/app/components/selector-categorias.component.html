@@ -1,0 +1,70 @@
+<div class="modal fade animate__bounceIn animate__delay-1s" id="categoryModal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-row"> 
+                <div class="col-md-6">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="selectCategory">Categorias</label>
+                        </div>
+                        <select 
+                            formControlName="categoria" 
+                            id="categoria"
+                            name="categoria"
+                            class="form-control categoria" 
+                            (change)="onSelectCategory()">
+                            <option *ngFor="let item of this.CategoriasArray" value="{{item.name}}">{{item.name}}</option>
+                        </select>
+                    </div>
+
+                    <select class="custom-select" multiple size="6">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Three</option>
+                        <option value="5">Three</option>
+                        <option value="6">Three</option>
+                        <option value="7">Three</option>
+                        <option value="8">Three</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="selectSubcategory">SubCategorias</label>
+                        </div>
+                        <select 
+                            class="custom-select" 
+                            id="selectSubcategory">
+                            <option 
+                                *ngFor="let item of this.subCategoriasArray; let i = index" 
+                                value="{{item}}"
+                            >
+                                <span>{{item}}</span>
+                            </option>
+                        </select>
+                    </div>
+                    <select class="custom-select" multiple size="6">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Three</option>
+                        <option value="5">Three</option>
+                        <option value="6">Three</option>
+                        <option value="7">Three</option>
+                        <option value="8">Three</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

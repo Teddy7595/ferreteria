@@ -1,0 +1,345 @@
+<div class="row">
+    <!--VENTANA DE REGISTRO DE PRODUCTOS-->
+    <div class="col-md-12">
+        <form [formGroup]="forma" (ngSubmit)="onRegisterProduct()">
+            <div class="card rounded-0">
+                <div class="card-header">
+                    Registro de productos del {{titulo}}
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="item">ID del producto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="item"
+                                placeholder="Ingrese el Id del producto"
+                                formControlName="id_producto"
+                                name="id_producto">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="item">Nombre del producto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="item"
+                                placeholder="Ingrese el nombre del producto"
+                                formControlName="name"
+                                name="name">
+                        </div>
+                        <label for="size"></label>
+                        <div class="col-sm-3">
+                            <label for="size">Presentacion:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="size" 
+                                placeholder=""
+                                formControlName="presentacion"
+                                name="presentacion">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="unidad">Unidad:</label>
+                            <select 
+                                formControlName="unidad" 
+                                id="unidad"
+                                name="unidad"
+                                class="form-control">
+
+                                <option value="Lts">Lts</option>
+                                <option value="Ml">Ml</option>
+                                <option value="Kg">Kg</option>
+                                <option value="Gr">Gr</option>
+                                <option value="Gallon">Gallon</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-8">
+                            <label for="description">Descripcion del producto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="description"
+                                placeholder="Ingrese una breve descripción del producto"
+                                formControlName="descripcion"
+                                name="descripcion">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="marca">Marca del Producto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="marca"
+                                placeholder="Ingrese la marca"
+                                formControlName="marca"
+                                name="marca">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="quantity">Productos disponibles:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="quantity"
+                                placeholder="Productos disponibles"
+                                formControlName="cantidad"
+                                name="cantidad">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="pack_size">Tamaño de bulto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="pack_size"
+                                placeholder="Tamaño del Bulto"
+                                formControlName="bulto"
+                                name="bulto">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="und_price">Valor del producto por unidad</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="und_price"
+                                placeholder="Ingrese el precio del producto"
+                                formControlName="precio_unit"
+                                name="precio_unit">
+                        </div>
+    
+                        <div class="col-sm-6">
+                            <label for="bult_price">Valor del producto al mayor</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="bult_price"
+                                placeholder="Ingrese el valor al mayor"
+                                formControlName="precio_multi"
+                                name="precio_multi">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="cant_desc">Cantidad de productos necesarios para un descuento:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="cant_desc"
+                                placeholder="Productos necesarios para descuento"
+                                formControlName="descuento_cant"
+                                name="descuento_cant">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="pcto_desc">Ingrese el % de descuento para este producto:</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-user" 
+                                id="cant_desc"
+                                placeholder="% de descuento"
+                                formControlName="descuento_prec"
+                                name="descuento_prec">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+
+                        <div class="col-md-3">
+                            <div class="btn-group" role="group">
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark" 
+                                    data-toggle="modal" 
+                                    data-target="#categoryModal"
+                                    >
+                                    Categorías
+                                </button>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark">
+                                    Imagenes
+                                </button>
+                              </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button 
+                                type="submit" 
+                                class="btn btn-block btn-success">
+                                Agregar producto
+                            </button>
+                        </div>
+                        <div class="col-md-3">
+                            <button 
+                                type="button" 
+                                class="btn btn-block btn-google" 
+                                data-toggle="modal" 
+                                data-target="#listModal" 
+                                (click)="onBttViewerList()">
+                                Ver listado de productos
+                            </button>
+                        </div>
+                        <div class="col-md-3">
+                            <button 
+                                id="bttModify"
+                                type="button" 
+                                [disabled]="this.isDisabled"
+                                class="btn btn-block btn-primary"
+                                (click)="onConfirmModify()">
+                                Confirmar modificación
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade animate__bounceIn animate__delay-1s" id="categoryModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="modal-body form-row" [formGroup]="this.Catgforma"> 
+                <div class="col-md-6">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="selectCategory">Categorias</label>
+                        </div>
+                        <select 
+                            formControlName="categoria" 
+                            id="categoria"
+                            name="categoria"
+                            class="form-control categoria"
+                            (change)="onSelectCategory()">
+                            <option selected disabled value="{{this.forma.value.categoria}}">{{this.forma.value.categoria}}</option>
+                            <option 
+                                *ngFor="let item of this.Categorias" 
+                                value="{{item.name}}">{{item.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="list-group" id="categoryList">
+                        <button 
+                            type="button" 
+                            class="list-group-item btn-outline-success rounded-0"
+                            *ngFor="let item of this.category; let i=index"
+                            (click)="onDeleteListCategory(i)">
+                            {{item}}
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="selectSubcategory">SubCategorias</label>
+                        </div>
+                        <select 
+                            formControlName="subCategoria" 
+                            id="subCategoria"
+                            name="subCategoria"
+                            class="form-control subcategoria" 
+                            (change)="onSelectSubCategory()">
+                            <option *ngFor="let item of this.subCategory" value="{{item}}">{{item}}</option>
+                        </select>
+                    </div>
+                    <div class="list-group" id="SBcategoryList">
+                        <button 
+                            type="button" 
+                            class="list-group-item btn-outline-success rounded-0"
+                            *ngFor="let item of this.sbCategory; let i=index"
+                            (click)="onDeleteListSubCategory(i)">
+                            {{item}}
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="listModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"> 
+                <table class="table table-responsive" id="catTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Codigo</th>
+                            <th>Categorias</th>
+                            <th>SubCategorias</th>
+                            <th>Precio</th>
+                            <th>Al mayor</th>
+                            <th>Disponibles</th>
+                            <th>Descuento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let producto of this.Productos; let i = index;">
+                                <td> {{producto.name}} </td>
+                                <td> {{producto.id_producto}} </td>
+                                <td> 
+                                    <span 
+                                        data-toggle="swal2-popup"
+                                        style="cursor: pointer;"
+                                        *ngFor="let categoria of producto.categoria; let i = index"
+                                        class="btn-outline-success p-1 d-inline-block text-truncate"
+                                        (click)="onChangeCategory(categoria,i,producto)">
+                                        {{categoria}}
+                                    </span>
+                                </td>
+                                <td> 
+                                    <span 
+                                        data-toggle="swal2-popup"
+                                        style="cursor: pointer;"
+                                        *ngFor="let subCategoria of producto.subCategoria; let i = index"
+                                        class="btn-outline-success p-1 d-inline-block text-truncate"
+                                        (click)="onChangeSubCategory(subCategoria, i, producto)">
+                                        {{subCategoria}}
+                                    </span>
+                                </td>
+                                <td> {{producto.precio_unit}} </td>
+                                <td> {{producto.precio_mult}} </td>
+                                <td> {{producto.cantidad}} </td>
+                                <td>  
+                                    <span>% Desc.: {{producto.descuento.descuento}}</span><br>
+                                    <span>Lim. min.: {{producto.descuento.cantidad}} </span>
+                                </td>
+                                <td>  
+                                    <button 
+                                        data-dismiss="modal"
+                                        class="btn btn-block btn-success py-1"
+                                        id="bttOpciones"
+                                        (click)="onModifyProduct(producto._id, producto)">
+                                        Modificar
+                                    </button>
+                                    <button 
+                                        class="btn btn-block btn-google py-1"
+                                        id="bttOpciones"
+                                        (click)="onDeleteProduct(producto._id)">
+                                        Eliminar
+                                    </button>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

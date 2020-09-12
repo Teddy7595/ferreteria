@@ -1,0 +1,156 @@
+<div class="col-md-12 px-0">
+    <div class="card rounded-0">
+        <div class="card-header">
+            Registro de categorias y Sub-categorias
+        </div>
+        <div class="card-body">
+            <form ngNativeValidate [formGroup]="this.forma" class="form-group row" (ngSubmit)="onRegistrerCategory()">
+                <div class="input-group mb-3 col-md-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre
+                        </span>
+                    </div>
+                    <input 
+                        required 
+                        formControlName="name" 
+                        id="name" name="name" 
+                        type="text" 
+                        class="form-control">
+                </div>
+                <div class="input-group mb-3 col-md-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Departamento
+                        </span>
+                    </div>
+                    <select 
+                        required
+                        formControlName="departamento" 
+                        id="departamento" 
+                        name="departamento" 
+                        class="form-control">
+                        <option value="Bodegon">Bodegon</option>
+                        <option value="Ferreteria">Ferreteria</option>
+                    </select>
+
+                </div>
+                <div class="col-md-3">
+                    <button class="btn color-dark btn-block color-font-light"> Agregar
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group row">
+                <div class="table-responsive">
+                    <table class="table table-responsive" id="catTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="px-2">Departamento</th>
+                                <th class="px-2">Nombre</th>
+                                <th class="px-2">F. Creación</th>
+                                <th class="px-2">F. Actualización</th>
+                                <th class="px-2">Subcategorias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor=" let categoria of this.Categorias;">
+                                <td class="px-2">{{ categoria.department || 'No hay data disponible' }} </td>
+                                <td class="px-2"> {{ categoria.name || 'No hay data'}} </td>
+                                <td class="px-2">{{ categoria.created_at || 'No hay data'}}</td>
+                                <td class="px-2">{{ categoria.updated_at || 'No hay data'}}</td>
+                                <td class="px-2">
+                                    <span 
+                                        class="btn-block"
+                                        style="cursor: pointer;" 
+                                        *ngFor="let item of categoria._subCategory; let i = index;"
+                                        role="button" > 
+                                        {{item}} 
+                                        <a 
+                                            class="btn-sm btn-outline-primary" 
+                                            (click)="onModifySubcategory(item, categoria, i)">
+                                            <i class="fas fa-pen-alt"></i>
+                                        </a>
+                                        <a 
+                                            class="btn-sm btn-outline-danger" 
+                                            (click)="onDeleteSubcategory(categoria, i)">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </span>
+                                </td>
+                                <td class="px-2">
+                                    <button class="btn btn-success btn-sm my-1" data-toggle="modal"
+                                        data-target="#modifyModal"
+                                        (click)="onModifyModal(categoria)">
+                                        Modificar
+                                    </button>
+                                    <button class="mx-2 btn btn-danger btn-sm my-1"
+                                        (click)="onDeleteCategory(categoria._id)">
+                                        Eliminar
+                                    </button>
+                                    <button class=" btn btn-primary btn-sm my-1"
+                                        (click)="onAddSubcategory(categoria)">
+                                        Agregar subcategoria
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade animate__bounceIn animate__delay-1s" id="modifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modificar categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form ngNativeValidate [formGroup]="this.forma" >
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Nombre
+                            </span>
+                        </div>
+                        <input 
+                            required 
+                            formControlName="name" 
+                            id="name" 
+                            name="name" 
+                            type="text" 
+                            class="form-control"
+                            value="{{this.forma.value.name}}">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Departamento
+                            </span>
+                        </div>
+                        <select 
+                            required
+                            formControlName="departamento" 
+                            id="departamento" 
+                            name="departamento"
+                            class="form-control">
+                            <option selected> {{this.forma.value.departamento}} </option>
+                            <option value="Bodegon">Bodegon</option>
+                            <option value="Ferreteria">Ferreteria</option>
+                        </select>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" (click)="onModifyCateogry()">Modificar</button>
+            </div>
+        </div>
+    </div>
+</div>

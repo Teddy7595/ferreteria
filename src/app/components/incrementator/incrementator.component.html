@@ -1,0 +1,30 @@
+<h5>{{leyenda}}</h5>
+<div class="input-group mb-3">
+    <div class="input-group-prepend" id="button-addon3">
+        <button 
+            class="btn btn-outline-secondary" 
+            type="button"
+            (click)='cambiarValor(-5)'
+            >
+            <i class="fa fa-minus"></i>
+        </button>
+        <button 
+            class="btn btn-outline-secondary" 
+            type="button"
+            (click)='cambiarValor(+5)'
+            >
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
+    <input 
+        #txtNumber
+        type="number" 
+        name="progressInput"
+        class="form-control" 
+        placeholder="" 
+        [(ngModel)]='progress'
+        (ngModelChange)='onChanges($event)'
+        min="0"
+        max="100"
+    >
+</div>
