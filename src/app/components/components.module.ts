@@ -9,6 +9,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { RegistroCategoriasComponent } from './registro-categorias.component';
 import { ServicesModule } from "../services/services.module";
 import { SelectorCategoriasComponent } from './selector-categorias.component';
+import { ProductoComponent } from './producto.component';
 
 @NgModule({
     declarations:[
@@ -16,6 +17,7 @@ import { SelectorCategoriasComponent } from './selector-categorias.component';
         FomularioComponent,
         RegistroCategoriasComponent,
         SelectorCategoriasComponent,
+        ProductoComponent,
     ],
     exports:
     [
