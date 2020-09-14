@@ -22,7 +22,7 @@ import { ProductosBodegonComponent } from './productos/productos-bodegon.compone
 import { PAGES_ROUTES } from './pages.routes';
 import { ServicesModule } from '../services/services.module';
 import { CategoriasComponent } from './categorias/categorias.component';
-
+import { PindividualComponent } from '../components/pindividual.component';
 
 
 @NgModule({
@@ -38,7 +38,8 @@ import { CategoriasComponent } from './categorias/categorias.component';
     ProgressComponent,
     ProductosFerreteriaComponent,
     ProductosBodegonComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    PindividualComponent
   ],
   imports: [
     CommonModule,
