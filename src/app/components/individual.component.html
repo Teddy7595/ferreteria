@@ -1,1 +1,57 @@
-<p>individual works!</p>
+<div class="row row-cols-sm-2 mb-3">
+      
+          
+    <!--Sale Item-->
+   <div class="col-sm-3 px-3 my-4 text-center">
+     <style> 
+       .show_me{ background-color: #22313f; color: #e4f1fe;}
+       .show_me:hover{ color: #e4f1fe; background-color: #1f3a93; }
+       .card{ font-family: Arial, Helvetica, sans-serif; }
+     </style>
+
+     <div class="card border-0">
+       <img src="imagenes/Desmalezadora.jpg" class="card-img-top rounded-0" alt="...">
+       <div class="card-body p-0">
+         <h5 class="card-title"> 
+           <p class="text-dark p-1 pb-0 font-weight-lighter mb-0"> Desmalezadora Toyama
+           </p>
+         </h5>
+       </div>
+       
+       <div class="text-center text-dark">
+         <div class="btn-group">
+           <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">-</button>
+           <div class="col-md-5">
+             <input type="text-center" class="form-control form-control-user text-center" value="1">
+           </div>
+           <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">+</button>
+         </div>
+         <p class="pl-3 price-color" style="font-size:12px">BsS: 123456,789 x Unidad (Descuento a partir de 3 Unidades)
+         </p>
+         <div style="text-align: center;">
+         <button class="btn btn-secondary rounded-pill text-center" type="button" style="font-size:12px;" data-toggle="modal" data-target="#infoModal">
+           <i class="fas fa-info" style="font-size:12px"></i>
+           Info
+         </button>
+         </div>
+         
+         <div class="btn-group" role="group">
+           <button id="btnGroupDrop1" type="button" class="btn btn-secondary-outline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Presentación
+           </button>
+           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+             <a class="dropdown-item" href="#">Unidades</a>
+             <a class="dropdown-item" href="#">Bultos</a>
+           </div>
+         </div>
+         
+         <p class="text-center font-weight-bolder text-dark mb-0 mt-1 pl-3 price-color">Total: BsS 123456,789</p>
+         
+       </div>
+     </div>
+     <a href="#" class="btn btn-block rounded-pill show_me"> 
+       <i class="fas fa-cart-plus"></i>
+       Agregar</a>
+   </div>
+   <!--End Sale Item-->
+</div>

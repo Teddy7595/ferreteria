@@ -39,7 +39,6 @@ import { CategoriasComponent } from './categorias/categorias.component';
     ProgressComponent,
     ProductosFerreteriaComponent,
     ProductosBodegonComponent,
-    CategoriasComponent,
   ],
   imports: [
     CommonModule,
