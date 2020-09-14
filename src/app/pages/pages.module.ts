@@ -17,12 +17,13 @@ import { RegisterComponent } from './register/register.component';
 import { ProgressComponent } from './progress/progress.component';
 import { ProductosFerreteriaComponent } from './productos/productos-ferreteria.component';
 import { ProductosBodegonComponent } from './productos/productos-bodegon.component';
+import { IndividualComponent } from '../components/individual.component';
+
 
 //RUTAS
 import { PAGES_ROUTES } from './pages.routes';
 import { ServicesModule } from '../services/services.module';
 import { CategoriasComponent } from './categorias/categorias.component';
-import { PindividualComponent } from '../components/pindividual.component';
 
 
 @NgModule({
@@ -39,7 +40,6 @@ import { PindividualComponent } from '../components/pindividual.component';
     ProductosFerreteriaComponent,
     ProductosBodegonComponent,
     CategoriasComponent,
-    PindividualComponent
   ],
   imports: [
     CommonModule,

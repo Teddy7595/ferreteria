@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pindividual',
-  templateUrl: './pindividual.component.html',
+  selector: 'app-individual',
+  templateUrl: './individual.component.html',
   styles: [
   ]
 })
-export class PindividualComponent implements OnInit {
+export class IndividualComponent implements OnInit {
 
   constructor() { }
 
