@@ -24,6 +24,7 @@ import { IndividualComponent } from '../components/individual.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { ServicesModule } from '../services/services.module';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { CertificadosComponent } from './certificados/certificados.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
     ProgressComponent,
     ProductosFerreteriaComponent,
     ProductosBodegonComponent,
+    CertificadosComponent,
   ],
   imports: [
     CommonModule,

@@ -25,6 +25,7 @@ import { IndividualComponent } from './individual.component';
         FomularioComponent,
         RegistroCategoriasComponent,
         SelectorCategoriasComponent,
+        IndividualComponent,
     ],
     imports:[
         FormsModule,

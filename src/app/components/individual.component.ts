@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-individual',
   templateUrl: './individual.component.html',
-  styles: [
+  styleUrls: [
   ]
 })
 export class IndividualComponent implements OnInit {
