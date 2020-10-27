@@ -10,6 +10,7 @@ import { ProductosBodegonComponent } from './productos/productos-bodegon.compone
 import { ProductosFerreteriaComponent } from './productos/productos-ferreteria.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CertificadosComponent } from './certificados/certificados.component';
+import { CertificadoUserComponent } from './certificados/certificado-user.component';
 
 
 
@@ -32,7 +33,8 @@ const pagesRoutes: Routes = [
             {path:'productos/bodegon', component: ProductosBodegonComponent},
             {path:'productos/ferreteria', component: ProductosFerreteriaComponent},
             {path:'categorias', component: CategoriasComponent},
-            {path:'certificados', component: CertificadosComponent}
+            {path:'certificados/agregar', component: CertificadosComponent},
+            {path:'certificados', component: CertificadoUserComponent}
         ]    
     },
     {path: '', redirectTo:'/', pathMatch: 'full'}

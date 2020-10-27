@@ -10,6 +10,7 @@ import { RegistroCategoriasComponent } from './registro-categorias.component';
 import { ServicesModule } from "../services/services.module";
 import { SelectorCategoriasComponent } from './selector-categorias.component';
 import { IndividualComponent } from './individual.component';
+import { CertificadoComponent } from './certificado.component';
 
 @NgModule({
     declarations:[
@@ -18,6 +19,7 @@ import { IndividualComponent } from './individual.component';
         RegistroCategoriasComponent,
         SelectorCategoriasComponent,
         IndividualComponent,
+        CertificadoComponent,
     ],
     exports:
     [
@@ -26,6 +28,7 @@ import { IndividualComponent } from './individual.component';
         RegistroCategoriasComponent,
         SelectorCategoriasComponent,
         IndividualComponent,
+        CertificadoComponent,
     ],
     imports:[
         FormsModule,

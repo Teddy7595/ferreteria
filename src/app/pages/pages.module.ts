@@ -25,6 +25,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import { ServicesModule } from '../services/services.module';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CertificadosComponent } from './certificados/certificados.component';
+import { CertificadoUserComponent } from './certificados/certificado-user.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { CertificadosComponent } from './certificados/certificados.component';
     ProductosFerreteriaComponent,
     ProductosBodegonComponent,
     CertificadosComponent,
+    CertificadoUserComponent,
   ],
   imports: [
     CommonModule,
