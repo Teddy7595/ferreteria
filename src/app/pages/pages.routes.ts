@@ -11,6 +11,7 @@ import { ProductosFerreteriaComponent } from './productos/productos-ferreteria.c
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { CertificadoUserComponent } from './certificados/certificado-user.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 
@@ -34,7 +35,8 @@ const pagesRoutes: Routes = [
             {path:'productos/ferreteria', component: ProductosFerreteriaComponent},
             {path:'categorias', component: CategoriasComponent},
             {path:'certificados/agregar', component: CertificadosComponent},
-            {path:'certificados', component: CertificadoUserComponent}
+            {path:'certificados', component: CertificadoUserComponent},
+            {path:'reportes', component: ReportesComponent}
         ]    
     },
     {path: '', redirectTo:'/', pathMatch: 'full'}

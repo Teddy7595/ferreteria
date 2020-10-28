@@ -26,6 +26,7 @@ import { ServicesModule } from '../services/services.module';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { CertificadoUserComponent } from './certificados/certificado-user.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CertificadoUserComponent } from './certificados/certificado-user.compon
     ProductosBodegonComponent,
     CertificadosComponent,
     CertificadoUserComponent,
+    ReportesComponent,
   ],
   imports: [
     CommonModule,
