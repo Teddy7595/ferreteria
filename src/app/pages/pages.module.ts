@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {ChartModule} from 'primeng/chart';
+import {CalendarModule} from 'primeng/calendar';
 
 //PAGINAS
 import { HomeComponent } from './home/home.component';
@@ -54,7 +56,9 @@ import { ReportesComponent } from './reportes/reportes.component';
     ComponentsModule,
     ReactiveFormsModule,
     SweetAlert2Module,
-    ServicesModule
+    ServicesModule,
+    ChartModule,
+    CalendarModule,
   ],
   exports:[
     HomeComponent,

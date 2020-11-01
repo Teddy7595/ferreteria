@@ -6,7 +6,37 @@
             Reportes de venta
         </div>
         <div class="card-body">
-            <p class="card-text">Content</p>
+             <div class="row">
+                 <div class="col-md-8">
+                    <p-chart type="bar" [data]="data"></p-chart>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="row">
+                        <div class="btn-toolbar" role="toolbar" aria-label="">
+                            <div class="btn-group" role="group" aria-label="">
+                                <div class="mr-3">
+                                   <button type="button" class="btn btn-outline-secondary btn-block">Generar Reporte Mensual</button>    
+                                </div>
+                                <div class="mr-3">
+                                   <button type="button" class="btn btn-outline-secondary btn-block"> Generar Reporte Anual</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                         <div class="p-fluid p-grid p-formgrid">
+                            <div class="p-field p-col-12 p-md-4">
+                                <label for="fecha">Seleccione una fecha para visualizar las ventas</label>
+                                <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd/mm/yy" inputId="fecha"></p-calendar>
+                            </div>
+                         </div>
+                         <div class="col-md-12 mr-3">
+                             <button class="btn btn-outline-secondary btn-block" type="button">Buscar</button>
+                         </div>
+                        
+                     </div>
+                 </div>
+             </div>
         </div>
     </div>
     </div>
